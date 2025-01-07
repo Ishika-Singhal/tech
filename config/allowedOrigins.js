@@ -1,5 +1,4 @@
 const allowedOrigins = [
-    'http://localhst:3000',
-    'https://ishikamobilepoint.com',
+    'http://localhost:3000',
 ]
 module.exports=allowedOrigins
