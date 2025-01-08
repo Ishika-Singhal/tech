@@ -8,7 +8,7 @@ const getAllUsers = asyncHandler(async (req, res) => {
   // Get all users from MongoDB
   const users = await User.find().select("-password").lean();
 
-  // If no users
+  // If no users or []=0
   if (!users?.length) {
     return res.status(400).json({ message: "No users found" });
   }

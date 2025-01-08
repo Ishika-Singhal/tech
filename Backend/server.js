@@ -8,6 +8,7 @@ const { logger,logEvents } =require('./middleware/logger')
 const errorHandler = require("./middleware/errorHandler");
 const route = require('./routes/root');
 const userRoute = require('./routes/userRoute');
+const noteRoute = require('./routes/noteRoute');
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
@@ -31,6 +32,7 @@ app.use('/',express.static(path.join(__dirname,'public')))
 
 app.use('/', route)
 app.use('/users',userRoute)
+app.use('/notes',noteRoute)
 
 // all route => *
 app.all('*', (req, res) => {
